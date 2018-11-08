@@ -8,6 +8,10 @@ numTestTokens = size(test_matrix, 2);
 
 output = zeros(numTestDocs, 1);
 
+% - Probability that one email is spam, number of spam emails divided by number of all emails
+prob_spam = length(spam_indices)/numTrainDocs;
+
+
 log_a = test_matrix*log(prob_token_spam') + log(prob_spam);
 log_b = test_matrix*log(prob_token_nonspam') + log(1-prob_spam);
 

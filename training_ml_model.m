@@ -13,9 +13,6 @@ train_labels = dlmread('train-labels.txt', ' ');
 spam_indices = find(train_labels);
 nonspam_indices = find(train_labels == 0);
 
-% - Probability that one email is spam, number of spam emails divided by number of all emails
-prob_spam = length(spam_indices)/numTrainDocs;
-
 % - Number of words for each email
 email_lengths = sum(train_matrix, 2);
 
